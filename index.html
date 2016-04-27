@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tax Rebalance</title>
+    <sript src="cutcalc.js" type="text/javascript"></sript>
+</head>
+<body>
+
+    <h1>Rebalance Regressive Tax Policies</h1>
+
+    <p>Many of us, while benefitting from this government's taxation policies are frustrated at their disproportionate impact on the poor. So we're pledging to take the redistribution of wealth into our own hands.</p>
+
+    <p>Instead of accepting our tax cut, we're going to give it the poorest in society who actually deserve it!</p>
+
+    <p>With this tool you can join us. Type in your gross income, and we'll calculate the tax cut you've been given this year, and provide some suggestions of ways to give that back to those in need.</p>
+
+    <form id="cutcalc">
+
+        <label for="gross_salary">Your salary (before tax):</label>
+        <input type="input" name="gross_salary" id="gross_salary">
+
+        <input type="submit" value="Calculate!">
+
+    </form>
+
+    <div id="tax_cut">
+        <p>You received a tax cut of</p>
+        <p id="tax_cut_amount"></p>
+    </div>
+
+</body>
+</html>
