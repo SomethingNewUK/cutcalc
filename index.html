@@ -3,6 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Tax Rebalance</title>
+    <style type="text/css">
+        .hidden {
+            display: none;
+            visibility: hidden;
+        }
+    </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script src="cutcalc.js"></script>
 </head>
@@ -16,10 +22,14 @@
 
     <p>With this tool you can join us. Type in your gross income, and we'll calculate the tax cut you've been given this year, and provide some suggestions of ways to give that back to those in need.</p>
 
+    <div id="result" class="hidden">
+        <p></p>
+    </div>
+
     <form id="cutcalc">
 
         <label for="gross_salary">Your salary (before tax):</label>
-        <input type="input" name="gross_salary" id="gross_salary">
+        <input type="input" name="gross_salary" id="gross_salary" value="">
 
         <input type="submit" value="Calculate!">
 
