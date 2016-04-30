@@ -25,10 +25,11 @@ $(function(){
 		// How much less tax for 2017?
 		var tax_diff = tax_2016 - tax_2017;
 
+		var result = $('#tax_cut_amount');
 		if ( tax_diff > 0 ) {
-			// Do whatever
+			result.text( '£' + tax_diff );
 		} else {
-			// You're better off, congratulations!
+			result.text( '£0' );
 		}
 
 	});
