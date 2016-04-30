@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <title>Tax Rebalance</title>
     <style type="text/css">
-        .hidden {
+        #tax_cut {
             display: none;
-            visibility: hidden;
         }
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
@@ -33,7 +32,13 @@
 
     <div id="tax_cut">
         <p>You received a tax cut of</p>
-        <p id="tax_cut_amount">&pound;<span></span></p>
+        <p id="tax_cut_amount"></p>
+        <p>Here are some suggestions to redistribute your tax cut to those more in need:</p>
+        <ul id="suggestions">
+            <li class="trussell"></li>
+            <li class="druk"></li>
+            <li class="food-bank"></li>
+        </ul>
     </div>
 
 </body>

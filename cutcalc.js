@@ -28,11 +28,70 @@ $(function(){
 		var result = $('#tax_cut_amount');
 		if ( tax_diff > 0 ) {
 			result.text( '£' + tax_diff );
+			make_suggestions( tax_diff );
+			$('#tax_cut').show();
 		} else {
 			result.text( '£0' );
 		}
 
 	});
+
+	function make_suggestions( tax_diff ) {
+
+		// Donate to the Trussel Trust
+		$('.trussell')
+			.text( 'Donate £' + tax_diff + ' to the ' )
+			.append( function () {
+				return $('<a/>')
+					.attr( 'href', '' )
+					.text( 'Trussell Trust' );
+			} );
+
+		var monthly = Math.round( tax_diff / 12 );
+		if ( monthly > 5 ) {
+
+			// Monthly donation to Disability Rights UK
+			$('.druk')
+				.text( 'Donate £' + monthly + ' per month to ' )
+				.append( function () {
+					return $('<a/>')
+						.attr( 'href', '' )
+						.text('Disability Rights UK');
+				});
+
+			// Monthly donation to food bank
+			$('.food-bank')
+				.text( 'Add £' + monthly + ' of food to one of your shopping trips each month, and donate the food to your ' )
+				.append( function () {
+					return $('<a/>')
+						.attr( 'href', 'https://www.trusselltrust.org/get-help/find-a-foodbank/' )
+						.text( 'local food bank' );
+				});
+
+		} else {
+
+			// One-off donation to Disability Rights UK
+			$('.druk')
+				.text( 'Donate £' + monthly + ' to ' )
+				.append( function () {
+					return $('<a/>')
+						.attr( 'href', '' )
+						.text('Disability Rights UK');
+				});
+
+			// One-off donation to local food bank
+			$('.food-bank')
+				.text( 'Do a £' + monthly + ' food shop to take to your ' )
+				.append( function () {
+					return $('<a/>')
+						.attr( 'href', 'https://www.trusselltrust.org/get-help/find-a-foodbank/' )
+						.text( 'local food bank' );
+				});
+		}
+
+
+
+	}
 
 	/**
 	 * Calculate the tax for a tax year, based on a salary
